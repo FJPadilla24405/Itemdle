@@ -5,24 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Ejecutar",
+            "name": "EjecutarItemdle",
             "type": "dart",
             "request": "launch",
             "program": "lib/main.dart"
         },
         {
-            "name": "tareas_flutter",
+            "name": "Itemdle",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "tareas_flutter (profile mode)",
+            "name": "Itemdle (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "tareas_flutter (release mode)",
+            "name": "Itemdle (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../menu_lateral.dart';
-import '../../themes/temas.dart';
+import '../side_drawer.dart';
+import '../../themes/themes.dart';
 import '../screens.dart';
 
 class Enlace10 extends StatelessWidget {
@@ -12,7 +12,7 @@ class Enlace10 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Contador de clicks',
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: const MiContador()
     );
   }
@@ -54,7 +54,7 @@ class _MiContadorState extends State<MiContador> {
     return Scaffold(
       appBar: 
           AppBar(title: const Text("Contador de clicks"),),
-      drawer: const MenuLateral(),
+      drawer: const SideDrawer(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

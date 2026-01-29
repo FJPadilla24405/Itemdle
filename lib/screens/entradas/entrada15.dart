@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 
 class Enlace15 extends StatelessWidget {
   const Enlace15({super.key});
@@ -12,7 +12,7 @@ class Enlace15 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Formulario',
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Formularios(),
     );
   }
@@ -101,7 +101,7 @@ class FormWidget extends State<Formularios> {
 Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(title: const Text("Formulario")),
-    drawer: const MenuLateral(),
+    drawer: const SideDrawer(),
     body: Padding(
       padding: const EdgeInsets.all(20.0),
       child: Form(

@@ -1,2 +1,0 @@
-C:/FlutterPrueba/tareas_flutter/build/.cxx/release/f533d692/x86_64/CMakeFiles/edit_cache.dir
-C:/FlutterPrueba/tareas_flutter/build/.cxx/release/f533d692/x86_64/CMakeFiles/rebuild_cache.dir

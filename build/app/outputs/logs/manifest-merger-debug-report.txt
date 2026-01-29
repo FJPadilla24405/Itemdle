@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:2:5-33:19
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
-MERGED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-12:19
-MERGED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-12:19
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:2:5-33:19
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
+MERGED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-12:19
+MERGED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:7:5-12:19
 MERGED from [androidx.window:window:1.2.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\6ca1db17970615e3e029777992983e6b\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\6ca1db17970615e3e029777992983e6b\transformed\jetified-window-1.2.0\AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\2c40b3605ce1f863a0ab38c5cd772a02\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:23:5-33:19
@@ -17,20 +17,21 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Usuario\.gradle\ca
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Usuario\.gradle\caches\8.12\transforms\ad54c48eb38304d58afae8e4a7584e91\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Usuario\.gradle\caches\8.12\transforms\ad54c48eb38304d58afae8e4a7584e91\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.17.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\071918798833ad8f8a3cad7a9089f648\transformed\core-1.17.0\AndroidManifest.xml:28:18-86
 	android:name
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:1:1-45:12
-MERGED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:1:1-45:12
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml:1:1-7:12
-MERGED from [:shared_preferences_android] C:\FlutterPrueba\tareas_flutter\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
-MERGED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-14:12
-MERGED from [:path_provider_android] C:\FlutterPrueba\tareas_flutter\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:1:1-45:12
+MERGED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:1:1-45:12
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml:1:1-7:12
+MERGED from [:shared_preferences_android] C:\FlutterPrueba\Itemdle\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-14:12
+MERGED from [:flutter_native_splash] C:\FlutterPrueba\Itemdle\build\flutter_native_splash\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
+MERGED from [:path_provider_android] C:\FlutterPrueba\Itemdle\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Usuario\.gradle\caches\8.12\transforms\5509f88cb2cdffea8df9a2e41120ff0c\transformed\preference-1.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.browser:browser:1.9.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\d5ba8a3f3d18f4b413ccbb814eeac7c7\transformed\browser-1.9.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\1c5f29333e3ceabe338071625b3e3861\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -87,39 +88,41 @@ MERGED from [androidx.annotation:annotation-experimental:1.4.1] C:\Users\Usuario
 MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\2b47e8c1975652c03961ca2586e68646\transformed\jetified-core-viewtree-1.0.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\Usuario\.gradle\caches\8.12\transforms\f19d59ee3776eb9cd1a214b3d04fe751\transformed\jetified-relinker-1.4.5\AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:1:11-69
 queries
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:39:5-44:15
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:39:5-44:15
 intent#action:name:android.intent.action.PROCESS_TEXT+data:mimeType:text/plain
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:40:9-43:18
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:40:9-43:18
 action#android.intent.action.PROCESS_TEXT
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:41:13-72
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:41:13-72
 	android:name
-		ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:41:21-70
+		ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:41:21-70
 data
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:42:13-50
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:42:13-50
 	android:mimeType
-		ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\main\AndroidManifest.xml:42:19-48
+		ADDED from C:\FlutterPrueba\Itemdle\android\app\src\main\AndroidManifest.xml:42:19-48
 uses-permission#android.permission.INTERNET
-ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml:6:5-66
+ADDED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml:6:22-64
+		ADDED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml:6:22-64
 uses-sdk
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
-INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
-MERGED from [:shared_preferences_android] C:\FlutterPrueba\tareas_flutter\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
-MERGED from [:shared_preferences_android] C:\FlutterPrueba\tareas_flutter\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
-MERGED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider_android] C:\FlutterPrueba\tareas_flutter\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
-MERGED from [:path_provider_android] C:\FlutterPrueba\tareas_flutter\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
+INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
+MERGED from [:shared_preferences_android] C:\FlutterPrueba\Itemdle\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences_android] C:\FlutterPrueba\Itemdle\build\shared_preferences_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] C:\FlutterPrueba\Itemdle\build\flutter_native_splash\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:flutter_native_splash] C:\FlutterPrueba\Itemdle\build\flutter_native_splash\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] C:\FlutterPrueba\Itemdle\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
+MERGED from [:path_provider_android] C:\FlutterPrueba\Itemdle\build\path_provider_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:5:5-44
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Usuario\.gradle\caches\8.12\transforms\5509f88cb2cdffea8df9a2e41120ff0c\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.preference:preference:1.2.1] C:\Users\Usuario\.gradle\caches\8.12\transforms\5509f88cb2cdffea8df9a2e41120ff0c\transformed\preference-1.2.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.browser:browser:1.9.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\d5ba8a3f3d18f4b413ccbb814eeac7c7\transformed\browser-1.9.0\AndroidManifest.xml:5:5-44
@@ -231,17 +234,17 @@ MERGED from [androidx.core:core-viewtree:1.0.0] C:\Users\Usuario\.gradle\caches\
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\Usuario\.gradle\caches\8.12\transforms\f19d59ee3776eb9cd1a214b3d04fe751\transformed\jetified-relinker-1.4.5\AndroidManifest.xml:5:5-43
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] C:\Users\Usuario\.gradle\caches\8.12\transforms\f19d59ee3776eb9cd1a214b3d04fe751\transformed\jetified-relinker-1.4.5\AndroidManifest.xml:5:5-43
 	android:targetSdkVersion
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\FlutterPrueba\tareas_flutter\android\app\src\debug\AndroidManifest.xml
+		INJECTED from C:\FlutterPrueba\Itemdle\android\app\src\debug\AndroidManifest.xml
 activity#io.flutter.plugins.urllauncher.WebViewActivity
-ADDED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:9-11:74
+ADDED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:9-11:74
 	android:exported
-		ADDED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:13-37
+		ADDED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:13-37
 	android:theme
-		ADDED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:13-71
+		ADDED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:13-71
 	android:name
-		ADDED from [:url_launcher_android] C:\FlutterPrueba\tareas_flutter\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:13-74
+		ADDED from [:url_launcher_android] C:\FlutterPrueba\Itemdle\build\url_launcher_android\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:13-74
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.2.0] C:\Users\Usuario\.gradle\caches\8.12\transforms\6ca1db17970615e3e029777992983e6b\transformed\jetified-window-1.2.0\AndroidManifest.xml:23:9-25:40
 	android:required

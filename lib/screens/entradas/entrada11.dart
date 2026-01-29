@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 
 class Enlace11 extends StatelessWidget {
   const Enlace11({super.key});
@@ -38,7 +38,7 @@ class PantallaInstagram extends State<Pantalla>{
             title: const Text("FranciscoPadilla"),
             centerTitle: true,
           ),
-          drawer: const MenuLateral(),
+          drawer: const SideDrawer(),
           body: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

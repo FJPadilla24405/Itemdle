@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../screens/menu_lateral.dart';
-import '../themes/temas.dart';
-
-bool isDarkMode = true;
+import 'side_drawer.dart';
+import '../themes/themes.dart';
 
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
@@ -15,47 +12,103 @@ class HomeApp extends StatefulWidget {
 }
 
 class AppState extends State<HomeApp> {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.width;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Actividad 1',
-        theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+        title: 'HomeScreen',
+        theme: Temas().Default(),
         home: Scaffold(
           appBar: AppBar(
-            title: Text("Francisco Padilla",
-            style: GoogleFonts.pacifico(
+            centerTitle: true,
+            title: Text("Itemdle",
+              style: GoogleFonts.kenia(
                 letterSpacing: 8.0,
-                fontSize: 20,
+                fontSize: 50,
+                fontWeight: FontWeight.bold
               ),
+            textAlign: TextAlign.center,
             ),
-            actions: [
-              Switch(
-                value: isDarkMode,
-                onChanged: (value) {
-                  setState(() {
-                    isDarkMode = value;
-                  });
-                },
-              ),
-            ],
           ),
-          drawer: const MenuLateral(),
-          body: Center(
-             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  child: Text('https://github.com/FJPadilla24405/RepositorioFlutterFcoPadilla',
-                  style: GoogleFonts.kenia(
-                  fontSize: 38,
-                  fontWeight: FontWeight.bold
-                  ), textAlign: TextAlign.center,),
-                  onTap: () => launchUrl(Uri.parse('https://github.com/FJPadilla24405/RepositorioFlutterFcoPadilla'))
+          drawer: const SideDrawer(),
+          body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/HomeBackground.jpg"),
+              fit: BoxFit.cover,
+              ),
+          ),
+          child: Center(
+             child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                spacing: 20,
+                children: [
+                Container(
+                  width: screenWidth * 0.9,
+                  height: screenHeight * 0.5,
+                  alignment: Alignment(0, 0),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    border: Border.all(
+                      width: 10,
+                      color: Color.fromRGBO(255, 255, 255, 0.15)
+                    ),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: 
+                    Text("Welcome to Itemdle! A game to test your knowledge on various items from videogames. So far the only option available for videogames is League Of Legends.",
+                    style: GoogleFonts.balthazar(
+                      fontSize: 19,
+                    ), softWrap: true,
+                    textAlign: TextAlign.center,
+                    )
+                ),
+                Container(
+                  width: screenWidth * 0.9,
+                  height: screenHeight * 0.5,
+                  alignment: Alignment(0, 0),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    border: Border.all(
+                      width: 10,
+                      color: Color.fromRGBO(255, 255, 255, 0.15)
+                    ),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: 
+                    Text("The goal is to accurately guess the details from every item based on their icon. Each videogame category will have up to three difficulties, from easy to hard. The harder the difficulty is the more fields you'll have to fill out.",
+                    style: GoogleFonts.balthazar(
+                      fontSize: 19,
+                    ), softWrap: true,
+                    textAlign: TextAlign.center,)
+                ),
+                Container(
+                  width: screenWidth * 0.9,
+                  height: screenHeight * 0.5,
+                  alignment: Alignment(0, 0),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    border: Border.all(
+                      width: 10,
+                      color: Color.fromRGBO(255, 255, 255, 0.15)
+                    ),
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: 
+                    Text("Start by pressing the three lines icon on the top left and choosing the videogame category. Have fun!",
+                    style: GoogleFonts.balthazar(
+                      fontSize: 19,
+                    ), softWrap: true,
+                    textAlign: TextAlign.center,)
                 ),
               ],)
           ),
-        ));
+        ))));
   }
 }

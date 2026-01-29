@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 import '../home_screen.dart';
 import 'pantalla3.dart';
 
@@ -12,7 +12,7 @@ class Pantalla2 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pantalla 2',
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Formularios(),
     );
   }

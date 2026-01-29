@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 
 
 class Enlace7 extends StatelessWidget {
@@ -12,7 +12,7 @@ class Enlace7 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Imagenes repetidas"),
       ),
-      drawer: const MenuLateral(),
+      drawer: const SideDrawer(),
       body: Center(
         child: SingleChildScrollView(
           child: Column(

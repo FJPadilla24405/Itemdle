@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 import '../home_screen.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 import 'pantalla2.dart';
 
 class Pantalla1 extends StatefulWidget {
@@ -21,7 +21,7 @@ class Pantalla1State extends State<Pantalla1> {
       debugShowCheckedModeBanner: false,
       title: 'Pantalla 1',
       // Si es oscuro tema oscuro si no tema claro
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Fco Javier 2ºDAM",
@@ -30,19 +30,9 @@ class Pantalla1State extends State<Pantalla1> {
               fontSize: 20,
             ),
           ),
-          actions: [
-            // Switch para cambiar de tema
-            Switch(
-              value: isDarkMode,
-              onChanged: (value) {
-                setState(() {
-                  isDarkMode = value;
-                });
-              },
-            ),
-          ],
+          
         ),
-        drawer: const MenuLateral(),
+        drawer: const SideDrawer(),
         body: Center(
           child: SingleChildScrollView (
             child: Column(

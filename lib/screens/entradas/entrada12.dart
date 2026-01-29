@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:async';
 
-import '../../themes/temas.dart';
-import '../menu_lateral.dart';
+import '../../themes/themes.dart';
+import '../side_drawer.dart';
 import '../screens.dart';
 
 class Enlace12 extends StatefulWidget {
@@ -53,12 +53,12 @@ class _RandomColors extends State<Enlace12> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Scaffold(
         appBar: AppBar(
             title: const Text("Juego de colores"),
           ),
-          drawer: const MenuLateral(),
+          drawer: const SideDrawer(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [

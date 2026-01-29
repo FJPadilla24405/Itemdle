@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 import 'dart:math';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 
 int getRandomNumber() {
     
@@ -22,7 +22,7 @@ class Enlace14 extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Adivina el número',
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: HomeWidget(),
     );
   }
@@ -96,7 +96,7 @@ class HomeWidget extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Formulario"),
         ),
-        drawer: const MenuLateral(),
+        drawer: const SideDrawer(),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Form(

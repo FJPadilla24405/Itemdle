@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 
 
 class Enlace4 extends StatelessWidget {
@@ -12,7 +12,7 @@ class Enlace4 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Filas de iconos"),
       ),
-      drawer: const MenuLateral(),
+      drawer: const SideDrawer(),
       body: const Center(
         child: SingleChildScrollView(
           child: Column(

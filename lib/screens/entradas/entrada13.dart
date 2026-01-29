@@ -3,10 +3,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../tools/variabletimer.dart';
 import '../screens.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 import 'dart:math';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 
 class Enlace13 extends StatefulWidget {
   const Enlace13({super.key});
@@ -99,12 +99,12 @@ class _RandomImages extends State<Enlace13> {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Scaffold(
          appBar: AppBar(
             title: const Text("Juego de imágenes"),
           ),
-          drawer: const MenuLateral(),
+          drawer: const SideDrawer(),
         body: Stack(
           children: [
             

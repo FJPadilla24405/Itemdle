@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../menu_lateral.dart';
+import '../side_drawer.dart';
 
 
 class Enlace9 extends StatelessWidget {
@@ -12,7 +12,7 @@ class Enlace9 extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Challenge"),
       ),
-      drawer: const MenuLateral(),
+      drawer: const SideDrawer(),
       body: Align(
   alignment: Alignment.center,
   child: SingleChildScrollView(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-import '../../themes/temas.dart';
+import '../../themes/themes.dart';
 import '../home_screen.dart';
 import 'pantalla1.dart';
 
@@ -40,7 +40,7 @@ class _AdivinaNumero extends State<Pantalla3> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: isDarkMode ? Temas().Tema1() : Temas().Tema2(),
+      theme: Temas().Default(),
       home: Scaffold(
         appBar: AppBar(
             title: const Text("Pantalla 3"),
