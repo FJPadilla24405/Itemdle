@@ -34,12 +34,12 @@ class AppState extends State<HomeApp> {
           ),
           drawer: const SideDrawer(),
           body: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/HomeBackground.jpg"),
-              fit: BoxFit.cover,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/HomeBackground.jpg"),
+                fit: BoxFit.cover,
               ),
-          ),
+            ),
           child: Center(
              child: SingleChildScrollView(
               child: Column(
