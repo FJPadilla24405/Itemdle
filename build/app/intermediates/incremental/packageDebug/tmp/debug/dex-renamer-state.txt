@@ -1,4 +1,4 @@
-#Thu Jan 29 13:31:11 CET 2026
+#Fri Jan 30 10:36:24 CET 2026
 base.0=C\:\\FlutterPrueba\\Itemdle\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\FlutterPrueba\\Itemdle\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\11\\classes.dex
 base.2=C\:\\FlutterPrueba\\Itemdle\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\12\\classes.dex
