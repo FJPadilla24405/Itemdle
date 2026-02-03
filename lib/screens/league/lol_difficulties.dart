@@ -25,7 +25,7 @@ class DifMenuLol extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/HomeBackground.jpg"),
+            image: AssetImage("assets/images/DifBackground.jpg"),
             fit: BoxFit.cover,
           ),
         ),

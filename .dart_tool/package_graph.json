@@ -12,6 +12,8 @@
         "flutter_native_splash",
         "get",
         "google_fonts",
+        "http",
+        "palette_generator",
         "shared_preferences",
         "url_launcher"
       ],
@@ -57,6 +59,24 @@
         "json_annotation",
         "path",
         "yaml"
+      ]
+    },
+    {
+      "name": "http",
+      "version": "1.6.0",
+      "dependencies": [
+        "async",
+        "http_parser",
+        "meta",
+        "web"
+      ]
+    },
+    {
+      "name": "palette_generator",
+      "version": "0.3.3+7",
+      "dependencies": [
+        "collection",
+        "flutter"
       ]
     },
     {
@@ -275,6 +295,29 @@
       "dependencies": []
     },
     {
+      "name": "web",
+      "version": "1.1.1",
+      "dependencies": []
+    },
+    {
+      "name": "http_parser",
+      "version": "4.1.2",
+      "dependencies": [
+        "collection",
+        "source_span",
+        "string_scanner",
+        "typed_data"
+      ]
+    },
+    {
+      "name": "async",
+      "version": "2.13.0",
+      "dependencies": [
+        "collection",
+        "meta"
+      ]
+    },
+    {
       "name": "ansicolor",
       "version": "2.0.3",
       "dependencies": []
@@ -311,11 +354,6 @@
       "dependencies": [
         "flutter"
       ]
-    },
-    {
-      "name": "web",
-      "version": "1.1.1",
-      "dependencies": []
     },
     {
       "name": "shared_preferences_windows",
@@ -446,16 +484,6 @@
       ]
     },
     {
-      "name": "http",
-      "version": "1.5.0",
-      "dependencies": [
-        "async",
-        "http_parser",
-        "meta",
-        "web"
-      ]
-    },
-    {
       "name": "crypto",
       "version": "3.0.6",
       "dependencies": [
@@ -478,14 +506,6 @@
       "name": "characters",
       "version": "1.4.0",
       "dependencies": []
-    },
-    {
-      "name": "async",
-      "version": "2.13.0",
-      "dependencies": [
-        "collection",
-        "meta"
-      ]
     },
     {
       "name": "leak_tracker_testing",
@@ -546,18 +566,18 @@
       ]
     },
     {
+      "name": "typed_data",
+      "version": "1.4.0",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
       "name": "petitparser",
       "version": "7.0.1",
       "dependencies": [
         "collection",
         "meta"
-      ]
-    },
-    {
-      "name": "typed_data",
-      "version": "1.4.0",
-      "dependencies": [
-        "collection"
       ]
     },
     {
@@ -626,16 +646,6 @@
       "dependencies": [
         "flutter",
         "path_provider_platform_interface"
-      ]
-    },
-    {
-      "name": "http_parser",
-      "version": "4.1.2",
-      "dependencies": [
-        "collection",
-        "source_span",
-        "string_scanner",
-        "typed_data"
       ]
     },
     {
