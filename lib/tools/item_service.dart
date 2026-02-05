@@ -38,13 +38,4 @@ class ItemService {
     final items = await getAllItems();
     return items[itemId];
   }
-  
-  // Buscar items por nombre
-  Future<List<Item>> searchItemsByName(String query) async {
-    final items = await getAllItems();
-    
-    return items.values
-        .where((item) => item.name.toLowerCase().contains(query.toLowerCase()))
-        .toList();
-  }
 }

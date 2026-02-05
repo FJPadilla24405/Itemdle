@@ -60,6 +60,7 @@ class Item {
   final String name;
   final ItemImage image;
   final ItemGold gold;
+  final List<String> tags;
   final ItemStats stats;
   final int depth;
 
@@ -68,6 +69,7 @@ class Item {
     required this.name,
     required this.image,
     required this.gold,
+    required this.tags,
     required this.stats,
     required this.depth
   });
@@ -78,6 +80,7 @@ class Item {
       name: json['name'] ?? '',
       image: ItemImage.fromJson(json['image'] ?? {}),
       gold: ItemGold.fromJson(json['gold'] ?? {}),
+      tags: List<String>.from(json['tags'] ?? []),
       stats: ItemStats.fromJson(json['stats'] ?? {}),
       depth: json['depth'] ?? 0
     );

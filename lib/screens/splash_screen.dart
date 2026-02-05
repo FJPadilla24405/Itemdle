@@ -20,13 +20,13 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
       // Verificar si el widget sigue montado antes de navegar
       // Para navegar, el widget debe de seguir en el árbol
       if (mounted) {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.home);
+        Navigator.of(context).pushReplacementNamed(AppRoutes.login);
       }
     });
 
     _controller = AnimationController(
-    duration: const Duration(seconds: 5),
-    vsync: this,
+      duration: const Duration(seconds: 5),
+      vsync: this,
     );
 
     _animation = Tween<double>(begin: 0, end: 2).animate(_controller)
@@ -34,16 +34,15 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
       if (status == AnimationStatus.completed) {
         _controller.reverse();
       }
-    })
-    ..addStatusListener((status) => print('$status'));
+    });
 
     _controller.forward();
   }
 
   @override
   void dispose() {
-  _controller.dispose();
-  super.dispose();
+    _controller.dispose();
+    super.dispose();
   }
 
   @override

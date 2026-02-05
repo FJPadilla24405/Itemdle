@@ -44,22 +44,22 @@ class SideDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(MaterialPageRoute(
-                    builder: (BuildContext context) => const HomeApp()));
+                  builder: (BuildContext context) => const HomeApp()));
               },
             ),
           ),
           ListTile(
             leading: Image.asset('assets/images/LeagueIcon.png', width: 30),
             title: Text("League of Legends",
-            style: GoogleFonts.balthazar(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white
+              style: GoogleFonts.balthazar(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white
             )),
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const DifMenuLol()));
+                builder: (BuildContext context) => const DifMenuLol()));
             },
           ),
         ],

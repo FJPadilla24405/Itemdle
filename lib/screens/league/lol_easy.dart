@@ -303,7 +303,8 @@ class FormWidget extends State<EasyForm> {
 
   @override
   Widget build(BuildContext context) {
-
+    String _imgUrl = _currentItem?.getImageUrl(ItemService.version) ?? '';
+    
     return Scaffold(
       appBar: AppBar(
         title: Text("Easy Mode",
@@ -358,7 +359,7 @@ class FormWidget extends State<EasyForm> {
           decoration: BoxDecoration(
             color: _dominantColor.withValues(alpha: 0.12),
             image: DecorationImage(
-              image: NetworkImage(_currentItem?.getImageUrl(ItemService.version) ?? ''),
+              image: NetworkImage(_imgUrl),
               colorFilter: ColorFilter.mode(Color.fromRGBO(0, 0, 0, 0.85), BlendMode.darken),
               fit: BoxFit.cover,
             ),
@@ -384,7 +385,7 @@ class FormWidget extends State<EasyForm> {
                         children: [
                           // Imagen del item desde la API
                           Image.network(
-                            _currentItem?.getImageUrl(ItemService.version) ?? '',
+                            _imgUrl,
                             scale: 0.5,
                             width: 100,
                             height: 100,
