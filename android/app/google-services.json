@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "673819426827",
+    "firebase_url": "https://itemdle-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "itemdle",
+    "storage_bucket": "itemdle.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:673819426827:android:ebe8876bfc39955a58070e",
+        "android_client_info": {
+          "package_name": "com.example.itemdle"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYPYiHul9clGKGcAOeXhiz846iaRFlEFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
