@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'item_model.dart';
+import '../models/item_model.dart';
 
 class ItemService {
   // Versión del parche (puedes actualizarla según necesites)

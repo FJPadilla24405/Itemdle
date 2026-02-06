@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:palette_generator/palette_generator.dart';
 
 import '../../themes/themes.dart';
-import '../../tools/item_model.dart';
-import '../../tools/item_service.dart';
+import '../../models/item_model.dart';
+import '../../services/item_service.dart';
 import '../side_drawer.dart';
 
 class EasyLol extends StatelessWidget {

@@ -32,12 +32,12 @@
         "source": "com.example.tareas_flutter.app-main-1:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.tareas_flutter.app-debug-6:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.tareas_flutter.app-main-1:/mipmap-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "com.example.tareas_flutter.app-debug-6:/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "com.example.tareas_flutter.app-main-1:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.tareas_flutter.app-debug-6:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.tareas_flutter.app-main-1:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "com.example.tareas_flutter.app-debug-6:/mipmap-hdpi_ic_launcher.png.flat",
