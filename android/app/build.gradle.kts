@@ -22,7 +22,7 @@ dependencies {
 }
 
 android {
-    namespace = "com.example.tareas_flutter"
+    namespace = "com.example.itemdle"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

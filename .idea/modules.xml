@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tareas_flutter.iml" filepath="$PROJECT_DIR$/tareas_flutter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android/tareas_flutter_android.iml" filepath="$PROJECT_DIR$/android/tareas_flutter_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/itemdle.iml" filepath="$PROJECT_DIR$/itemdle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/itemdle_android.iml" filepath="$PROJECT_DIR$/android/itemdle_android.iml" />
     </modules>
   </component>
 </project>
