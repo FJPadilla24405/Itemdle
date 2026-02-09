@@ -12,7 +12,7 @@ class MediumLol extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Medium Mode',
-      theme: Temas().Default(),
+      theme: Themes().Default(),
       home: MediumForm(),
     );
   }

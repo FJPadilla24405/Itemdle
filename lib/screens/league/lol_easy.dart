@@ -17,7 +17,7 @@ class EasyLol extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Easy Mode',
-      theme: Temas().Game(),
+      theme: Themes().Game(),
       home: EasyForm(),
     );
   }
@@ -360,12 +360,12 @@ class FormWidget extends State<EasyForm> {
             color: _dominantColor.withValues(alpha: 0.12),
             image: DecorationImage(
               image: NetworkImage(_imgUrl),
-              colorFilter: ColorFilter.mode(Color.fromRGBO(0, 0, 0, 0.85), BlendMode.darken),
+              colorFilter: ColorFilter.mode(Color.fromRGBO(0, 0, 0, 0.5), BlendMode.darken),
               fit: BoxFit.cover,
             ),
           ),
           child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+          filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
           child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Form(

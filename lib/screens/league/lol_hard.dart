@@ -12,7 +12,7 @@ class HardLol extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hard Mode',
-      theme: Temas().Default(),
+      theme: Themes().Default(),
       home: HardForm(),
     );
   }

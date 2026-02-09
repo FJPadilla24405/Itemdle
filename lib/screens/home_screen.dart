@@ -19,7 +19,7 @@ class AppState extends State<HomeApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'HomeScreen',
-      theme: Temas().Default(),
+      theme: Themes().Default(),
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

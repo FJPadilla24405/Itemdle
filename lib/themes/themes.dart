@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class Temas extends StatelessWidget {
-  const Temas({super.key});
+class Themes extends StatelessWidget {
+  const Themes({super.key});
 
   ThemeData Default() {
     return ThemeData(
