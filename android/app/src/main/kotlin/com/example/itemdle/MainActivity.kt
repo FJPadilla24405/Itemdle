@@ -1,4 +1,4 @@
-package com.example.tareas_flutter
+package com.example.itemdle
 
 import io.flutter.embedding.android.FlutterActivity
 
