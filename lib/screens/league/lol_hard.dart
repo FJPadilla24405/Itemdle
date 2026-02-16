@@ -1,162 +1,144 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../../themes/themes.dart';
-import '../side_drawer.dart';
+import '../../models/item_model.dart';
+import 'lol_base.dart';
 
 class HardLol extends StatelessWidget {
   const HardLol({super.key});
   
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Hard Mode',
-      theme: Themes().Default(),
-      home: HardForm(),
-    );
+    return HardModeScreen();
   }
 }
 
-class HardForm extends StatefulWidget {
-  const HardForm({super.key});
+class HardModeScreen extends BaseGameScreen {
+  const HardModeScreen({super.key});
 
   @override
-  State<HardForm> createState() => FormWidget3();
+  String getGameMode() => 'Hard';
+
+  @override
+  String getTitle() => 'Hard Mode';
+
+  @override
+  List<GameField> getFields() {
+    return [
+      GameField(
+        name: 'name',
+        label: 'Name',
+        inputType: TextInputType.name,
+        getCorrectValue: (item) => item.name,
+      ),
+    ];
+  }
+  
+  @override
+  State<HardModeScreen> createState() => _HardModeScreenState();
 }
 
-class FormWidget3 extends State<HardForm> {
-  final _formKey = GlobalKey<FormState>();
-  final List<TextEditingController> _textEditingControllers = [];
-  List<Widget> _widgets = [];
-
-  FormWidget3() {
-    _generarCamposBase();
+class _HardModeScreenState extends BaseGameState<HardModeScreen> {
+  // Lista dinámica de campos que cambia según el item
+  List<GameField> _dynamicFields = [];
+  
+  // Guardar el snapshot de stats del item actual para validación
+  Map<String, double> _currentItemStats = {};
+  
+  @override
+  void initState() {
+    super.initState();
   }
-
-  void _generarCamposBase() {
-    List<List> fieldNames = [
-      ["Name", TextInputType.name],
-      ["Price", TextInputType.number],
-      ["Tier", TextInputType.text],
-      ["Attack Damage", TextInputType.number],
-      ["Attack Power", TextInputType.number],
-      ["Health", TextInputType.number],
-      ["Armor", TextInputType.number],
-      ["Magic Resistance", TextInputType.number],
-    ];
-
-    _widgets = [];
-    _textEditingControllers.clear();
-
-    for (int i = 0; i < fieldNames.length; i++) {
-      String fieldName = fieldNames[i][0];
-      TextInputType textType = fieldNames[i][1];
-
-      TextEditingController controller = TextEditingController();
-      _textEditingControllers.add(controller);
-
-      _widgets.add(
-        Padding(
-          padding: const EdgeInsets.all(7.0),
-          child: _createTextFormField(fieldName, controller, textType),
-        ),
-      );
+  
+  @override
+  Future<void> loadItemByIndex(int index) async {
+    await super.loadItemByIndex(index);
+    
+    // Después de cargar el item, actualizar los campos dinámicos
+    if (currentItem != null) {
+      _updateDynamicFields();
     }
   }
-
   
-  Column _createTextFormField(String fieldName, TextEditingController controller, TextInputType textType) {
-    return Column (
-      children: [
-        Text(fieldName, style: GoogleFonts.balthazar(letterSpacing: 2, fontSize: 20, fontWeight: FontWeight.bold)),
-        TextFormField(
-          style: GoogleFonts.balthazar(
-            letterSpacing: 2.0,
-            fontSize: 20,
-            color: Colors.white
-          ),
-          keyboardType: textType,
-          obscureText: fieldName == "Contraseña",
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Field must be completed';
-            } 
-            return null;
-          },
-          decoration: InputDecoration(
-            labelStyle: GoogleFonts.balthazar(fontSize: 20),
-            hintStyle: GoogleFonts.balthazar(fontSize: 20),
-            hintText: "· · ·",
-            labelText: fieldName,
-          ),
-          controller: controller,
-        )
-      ]
-    );
+  void _updateDynamicFields() {
+    // Obtener stats no cero del item actual
+    _currentItemStats = currentItem!.stats.getNonZeroStats();
+    
+    print('🔍 Item: ${currentItem!.name}');
+    print('🔍 Stats encontradas: $_currentItemStats');
+    
+    setState(() {
+      _dynamicFields = _generateStatsFields();
+      
+      // Limpiar controladores viejos que ya no se necesitan
+      controllers.keys.toList().forEach((key) {
+        if (!_dynamicFields.any((field) => field.name == key) && key != 'name') {
+          controllers[key]?.dispose();
+          controllers.remove(key);
+        }
+      });
+      
+      // Crear nuevos controladores para los nuevos campos
+      for (var field in _dynamicFields) {
+        if (!controllers.containsKey(field.name)) {
+          controllers[field.name] = TextEditingController();
+        }
+      }
+    });
   }
-
-  @override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(title: Text("Hard Mode",
-              style: GoogleFonts.kenia(
-                letterSpacing: 2.0,
-                fontSize: 50,
-                fontWeight: FontWeight.bold
-              ),
-            ), centerTitle: true,),
-    drawer: const SideDrawer(),
-    bottomNavigationBar: ElevatedButton(
-              onPressed: () {
-                _formKey.currentState?.validate();
-              },
-              child: Text('Confirm',
-                style: GoogleFonts.balthazar(
-                  letterSpacing: 2.0,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                )
-              ),
-            ),
-    body: Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Form(
-        key: _formKey,
-        child: ListView(
-          children: [
-            Container(
-              padding: EdgeInsets.fromLTRB(5, 10, 5, 4),
-              margin: EdgeInsets.fromLTRB(125, 0, 125, 0),
-              decoration: BoxDecoration(
-                    color: Colors.cyan,
-                    border: Border.all(
-                      color: Color.fromRGBO(0, 0, 0, 0)
-                    ),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.network("https://ddragon.leagueoflegends.com/cdn/12.6.1/img/item/3111.png", scale: 0.5, width: 100, height: 100,),
-                  SizedBox(height: 5,),
-                  Text("Id: 3110",
-                    style: GoogleFonts.balthazar(
-                      letterSpacing: 2.0,
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black
-                    )
-                  )
-                ]
-              )
-            ),
-            Container(width: 1, height: 2, color: Colors.cyan, margin: EdgeInsets.all(20),),
-            ..._widgets, // los campos base
-          ],
-        ),
+  
+  List<GameField> _generateStatsFields() {
+    List<GameField> fields = [
+      // Nombre siempre está primero
+      GameField(
+        name: 'name',
+        label: 'Name',
+        inputType: TextInputType.name,
+        getCorrectValue: (item) => item.name,
       ),
-    ),
-  );
-}
+      GameField(
+        name: 'total_gold',
+        label: 'Total Gold',
+        inputType: TextInputType.number,
+        getCorrectValue: (item) => item.gold.total.toString(),
+      ),
+      GameField(
+        name: 'tier',
+        label: 'Tier',
+        inputType: TextInputType.text,
+        getCorrectValue: (item) => item.depth.toString(),
+      ),
+    ];
+    
+    // Crear un campo por cada stat
+    _currentItemStats.forEach((statName, statValue) {
+      final fieldName = statName.toLowerCase().replaceAll(' ', '_');
+      
+      fields.add(
+        GameField(
+          name: fieldName,
+          label: statName,
+          inputType: TextInputType.numberWithOptions(decimal: true, signed: true),
+          getCorrectValue: (item) {
+            // Usar el valor guardado del snapshot
+            final value = _currentItemStats[statName];
+            if (value == null) return '0';
+            
+            // Si es entero, mostrar sin decimales
+            if (value == value.toDouble()) {
+              return value.toDouble().toString();
+            }
+            return value.toString();
+          },
+        ),
+      );
+      
+      print('📝 Campo creado: $statName = $statValue');
+    });
+    
+    return fields;
+  }
+  
+  @override
+  List<GameField> getFieldsToDisplay() {
+    return _dynamicFields.isEmpty ? widget.getFields() : _dynamicFields;
+  }
 }

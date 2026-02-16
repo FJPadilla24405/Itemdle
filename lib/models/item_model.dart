@@ -62,7 +62,7 @@ class Item {
   final ItemGold gold;
   final List<String> tags;
   final ItemStats stats;
-  final int depth;
+  final String depth;
 
   Item({
     required this.id,
@@ -82,8 +82,23 @@ class Item {
       gold: ItemGold.fromJson(json['gold'] ?? {}),
       tags: List<String>.from(json['tags'] ?? []),
       stats: ItemStats.fromJson(json['stats'] ?? {}),
-      depth: json['depth'] ?? 0
+      depth: getTier(json),
     );
+  }
+
+  static String getTier(Map<String, dynamic> json) {
+    int depth = json['depth'] ?? 0;
+    String tier = '';
+
+    if (depth <= 1) {
+      tier = 'basic';
+    } else if (depth == 2) {
+      tier = 'epic';
+    } else {
+      tier = 'legendary';
+    }
+
+    return tier;
   }
 
   // Método helper para obtener la URL completa de la imagen

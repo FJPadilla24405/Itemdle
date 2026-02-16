@@ -1,111 +1,48 @@
 // models/item_stats.dart
 
 class ItemStats {
-  final double flatHPPoolMod;
-  final double flatMPPoolMod;
-  final double percentHPPoolMod;
-  final double percentMPPoolMod;
-  final double flatHPRegenMod;
-  final double percentHPRegenMod;
-  final double flatMPRegenMod;
-  final double percentMPRegenMod;
-  final double flatArmorMod;
-  final double percentArmorMod;
-  final double flatPhysicalDamageMod;
-  final double percentPhysicalDamageMod;
-  final double flatMagicDamageMod;
-  final double percentMagicDamageMod;
-  final double flatMovementSpeedMod;
-  final double percentMovementSpeedMod;
-  final double flatAttackSpeedMod;
-  final double percentAttackSpeedMod;
-  final double percentDodgeMod;
-  final double flatCritChanceMod;
-  final double percentCritChanceMod;
-  final double flatCritDamageMod;
-  final double percentCritDamageMod;
-  final double flatBlockMod;
-  final double percentBlockMod;
-  final double flatSpellBlockMod;
-  final double percentSpellBlockMod;
-  final double flatEXPBonus;
-  final double percentEXPBonus;
-  final double flatEnergyRegenMod;
-  final double flatEnergyPoolMod;
-  final double percentLifeStealMod;
-  final double percentSpellVampMod;
+  final double health;
+  final double mana;
+  final double healthRegen;
+  final double armor;
+  final double attackDmg;
+  final double abilityPwr;
+  final double movementSpeed;
+  final double percentMovementSpeed;
+  final double attackSpeed;
+  final double critChance;
+  final double magicResistance;
+  final double lifeSteal;
 
   ItemStats({
-    this.flatHPPoolMod = 0,
-    this.flatMPPoolMod = 0,
-    this.percentHPPoolMod = 0,
-    this.percentMPPoolMod = 0,
-    this.flatHPRegenMod = 0,
-    this.percentHPRegenMod = 0,
-    this.flatMPRegenMod = 0,
-    this.percentMPRegenMod = 0,
-    this.flatArmorMod = 0,
-    this.percentArmorMod = 0,
-    this.flatPhysicalDamageMod = 0,
-    this.percentPhysicalDamageMod = 0,
-    this.flatMagicDamageMod = 0,
-    this.percentMagicDamageMod = 0,
-    this.flatMovementSpeedMod = 0,
-    this.percentMovementSpeedMod = 0,
-    this.flatAttackSpeedMod = 0,
-    this.percentAttackSpeedMod = 0,
-    this.percentDodgeMod = 0,
-    this.flatCritChanceMod = 0,
-    this.percentCritChanceMod = 0,
-    this.flatCritDamageMod = 0,
-    this.percentCritDamageMod = 0,
-    this.flatBlockMod = 0,
-    this.percentBlockMod = 0,
-    this.flatSpellBlockMod = 0,
-    this.percentSpellBlockMod = 0,
-    this.flatEXPBonus = 0,
-    this.percentEXPBonus = 0,
-    this.flatEnergyRegenMod = 0,
-    this.flatEnergyPoolMod = 0,
-    this.percentLifeStealMod = 0,
-    this.percentSpellVampMod = 0,
+    this.health = 0,
+    this.mana = 0,
+    this.healthRegen = 0,
+    this.armor = 0,
+    this.attackDmg = 0,
+    this.abilityPwr = 0,
+    this.movementSpeed = 0,
+    this.percentMovementSpeed = 0,
+    this.attackSpeed = 0,
+    this.critChance = 0,
+    this.magicResistance = 0,
+    this.lifeSteal = 0,
   });
 
   factory ItemStats.fromJson(Map<String, dynamic> json) {
     return ItemStats(
-      flatHPPoolMod: (json['FlatHPPoolMod'] ?? 0).toDouble(),
-      flatMPPoolMod: (json['FlatMPPoolMod'] ?? 0).toDouble(),
-      percentHPPoolMod: (json['PercentHPPoolMod'] ?? 0).toDouble(),
-      percentMPPoolMod: (json['PercentMPPoolMod'] ?? 0).toDouble(),
-      flatHPRegenMod: (json['FlatHPRegenMod'] ?? 0).toDouble(),
-      percentHPRegenMod: (json['PercentHPRegenMod'] ?? 0).toDouble(),
-      flatMPRegenMod: (json['FlatMPRegenMod'] ?? 0).toDouble(),
-      percentMPRegenMod: (json['PercentMPRegenMod'] ?? 0).toDouble(),
-      flatArmorMod: (json['FlatArmorMod'] ?? 0).toDouble(),
-      percentArmorMod: (json['PercentArmorMod'] ?? 0).toDouble(),
-      flatPhysicalDamageMod: (json['FlatPhysicalDamageMod'] ?? 0).toDouble(),
-      percentPhysicalDamageMod: (json['PercentPhysicalDamageMod'] ?? 0).toDouble(),
-      flatMagicDamageMod: (json['FlatMagicDamageMod'] ?? 0).toDouble(),
-      percentMagicDamageMod: (json['PercentMagicDamageMod'] ?? 0).toDouble(),
-      flatMovementSpeedMod: (json['FlatMovementSpeedMod'] ?? 0).toDouble(),
-      percentMovementSpeedMod: (json['PercentMovementSpeedMod'] ?? 0).toDouble(),
-      flatAttackSpeedMod: (json['FlatAttackSpeedMod'] ?? 0).toDouble(),
-      percentAttackSpeedMod: (json['PercentAttackSpeedMod'] ?? 0).toDouble(),
-      percentDodgeMod: (json['PercentDodgeMod'] ?? 0).toDouble(),
-      flatCritChanceMod: (json['FlatCritChanceMod'] ?? 0).toDouble(),
-      percentCritChanceMod: (json['PercentCritChanceMod'] ?? 0).toDouble(),
-      flatCritDamageMod: (json['FlatCritDamageMod'] ?? 0).toDouble(),
-      percentCritDamageMod: (json['PercentCritDamageMod'] ?? 0).toDouble(),
-      flatBlockMod: (json['FlatBlockMod'] ?? 0).toDouble(),
-      percentBlockMod: (json['PercentBlockMod'] ?? 0).toDouble(),
-      flatSpellBlockMod: (json['FlatSpellBlockMod'] ?? 0).toDouble(),
-      percentSpellBlockMod: (json['PercentSpellBlockMod'] ?? 0).toDouble(),
-      flatEXPBonus: (json['FlatEXPBonus'] ?? 0).toDouble(),
-      percentEXPBonus: (json['PercentEXPBonus'] ?? 0).toDouble(),
-      flatEnergyRegenMod: (json['FlatEnergyRegenMod'] ?? 0).toDouble(),
-      flatEnergyPoolMod: (json['FlatEnergyPoolMod'] ?? 0).toDouble(),
-      percentLifeStealMod: (json['PercentLifeStealMod'] ?? 0).toDouble(),
-      percentSpellVampMod: (json['PercentSpellVampMod'] ?? 0).toDouble(),
+      health: (json['FlatHPPoolMod'] ?? 0).toDouble(),
+      mana: (json['FlatMPPoolMod'] ?? 0).toDouble(),
+      healthRegen: (json['FlatHPRegenMod'] ?? 0).toDouble(),
+      armor: (json['FlatArmorMod'] ?? 0).toDouble(),
+      attackDmg: (json['FlatPhysicalDamageMod'] ?? 0).toDouble(),
+      abilityPwr: (json['FlatMagicDamageMod'] ?? 0).toDouble(),
+      movementSpeed: (json['FlatMovementSpeedMod'] ?? 0).toDouble(),
+      percentMovementSpeed: ((json['PercentMovementSpeedMod'] ?? 0).toDouble()),
+      attackSpeed: ((json['PercentAttackSpeedMod'] ?? 0).toDouble()),
+      critChance: ((json['FlatCritChanceMod'] ?? 0).toDouble()),
+      magicResistance: (json['FlatSpellBlockMod'] ?? 0).toDouble(),
+      lifeSteal: ((json['PercentLifeStealMod'] ?? 0).toDouble()),
     );
   }
 
@@ -113,18 +50,18 @@ class ItemStats {
   Map<String, double> getNonZeroStats() {
     Map<String, double> nonZero = {};
     
-    if (flatHPPoolMod != 0) nonZero['HP'] = flatHPPoolMod;
-    if (flatMPPoolMod != 0) nonZero['Mana'] = flatMPPoolMod;
-    if (flatArmorMod != 0) nonZero['Armor'] = flatArmorMod;
-    if (flatPhysicalDamageMod != 0) nonZero['Attack Damage'] = flatPhysicalDamageMod;
-    if (flatMagicDamageMod != 0) nonZero['Ability Power'] = flatMagicDamageMod;
-    if (flatMovementSpeedMod != 0) nonZero['Movement Speed'] = flatMovementSpeedMod;
-    if (percentAttackSpeedMod != 0) nonZero['Attack Speed'] = percentAttackSpeedMod;
-    if (flatCritChanceMod != 0) nonZero['Critical Strike Chance'] = flatCritChanceMod;
-    if (percentLifeStealMod != 0) nonZero['Life Steal'] = percentLifeStealMod;
-    if (flatSpellBlockMod != 0) nonZero['Magic Resist'] = flatSpellBlockMod;
-    if (percentHPRegenMod != 0) nonZero['HP Regen'] = percentHPRegenMod;
-    if (percentMPRegenMod != 0) nonZero['Mana Regen'] = percentMPRegenMod;
+    if (health != 0) nonZero['HP'] = health;
+    if (mana != 0) nonZero['Mana'] = mana;
+    if (healthRegen != 0) nonZero['HP Regen'] = healthRegen;
+    if (armor != 0) nonZero['Armor'] = armor;
+    if (attackDmg != 0) nonZero['Attack Damage'] = attackDmg;
+    if (abilityPwr != 0) nonZero['Ability Power'] = abilityPwr;
+    if (movementSpeed != 0) nonZero['Movement Speed'] = movementSpeed;
+    if (percentMovementSpeed != 0) nonZero['Movement Speed (%)'] = percentMovementSpeed * 100;
+    if (attackSpeed != 0) nonZero['Attack Speed (%)'] = attackSpeed * 100;
+    if (critChance != 0) nonZero['Critical Strike Chance (%)'] = critChance * 100;
+    if (magicResistance != 0) nonZero['Magic Resistance'] = magicResistance;
+    if (lifeSteal != 0) nonZero['Life Steal (%)'] = lifeSteal * 100;
     
     return nonZero;
   }

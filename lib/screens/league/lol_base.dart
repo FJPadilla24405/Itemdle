@@ -12,13 +12,11 @@ import '../side_drawer.dart';
 abstract class BaseGameScreen extends StatefulWidget {
   const BaseGameScreen({super.key});
   
-  // Métodos abstractos que cada modo debe implementar
-  String getGameMode(); // 'Easy', 'Medium', 'Hard'
-  String getTitle(); // 'Easy Mode', 'Medium Mode', 'Hard Mode'
-  List<GameField> getFields(); // Lista de campos del formulario
+  String getGameMode();
+  String getTitle();
+  List<GameField> getFields();
 }
 
-// Clase para definir los campos del formulario
 class GameField {
   final String name;
   final String label;
@@ -38,10 +36,8 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
   final _formKey = GlobalKey<FormState>();
   final ItemService _itemService = ItemService();
   
-  // Controladores dinámicos basados en los campos
-  late Map<String, TextEditingController> _controllers;
+  late Map<String, TextEditingController> controllers;
   
-  // Variables para el color dinámico
   Color _darkVibrantColor = Colors.cyan;
   Color _darkMutedColor = Colors.cyan;
   Color _lightVibrantColor = Colors.white;
@@ -51,8 +47,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
   Color _dominantColor = Colors.black;
   bool _isLoadingColor = true;
 
-  // Variables para el item de la API
-  Item? _currentItem;
+  Item? currentItem;
   bool _isLoadingItem = true;
   List<String> _allItemIds = [];
   int _currentItemIndex = 0;
@@ -60,8 +55,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
   @override
   void initState() {
     super.initState();
-    // Inicializar controladores dinámicamente
-    _controllers = {
+    controllers = {
       for (var field in widget.getFields())
         field.name: TextEditingController()
     };
@@ -70,8 +64,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
   
   @override
   void dispose() {
-    // Limpiar todos los controladores
-    _controllers.values.forEach((controller) => controller.dispose());
+    controllers.values.forEach((controller) => controller.dispose());
     super.dispose();
   }
 
@@ -85,7 +78,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
       _allItemIds = items.keys.toList();
       
       if (_allItemIds.isNotEmpty) {
-        await _loadItemByIndex(0);
+        await loadItemByIndex(0);
       }
     } catch (e) {
       print('Error cargando items: $e');
@@ -96,7 +89,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
     }
   }
 
-  Future<void> _loadItemByIndex(int index) async {
+  Future<void> loadItemByIndex(int index) async {
     if (index >= _allItemIds.length) {
       _showCompletionDialog();
       return;
@@ -111,10 +104,9 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
       final item = await _itemService.getItemById(_allItemIds[index]);
       if (item != null) {
         setState(() {
-          _currentItem = item;
+          currentItem = item;
           _isLoadingItem = false;
-          // Limpiar todos los campos
-          _controllers.values.forEach((controller) => controller.clear());
+          controllers.values.forEach((controller) => controller.clear());
         });
         await _extractDominantColor(item.getImageUrl(ItemService.version));
       }
@@ -160,27 +152,62 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
   void _validateAndNext() {
     if (_formKey.currentState?.validate() ?? false) {
       bool allCorrect = true;
+      String incorrectField = '';
       
-      // Validar todos los campos
-      for (var field in widget.getFields()) {
-        final userInput = _controllers[field.name]!.text.trim().toLowerCase();
-        final correctValue = field.getCorrectValue(_currentItem!).toLowerCase();
+      final fieldsToValidate = getFieldsToDisplay();
+      
+      for (var field in fieldsToValidate) {
+        if (!controllers.containsKey(field.name)) continue;
         
-        if (userInput != correctValue) {
+        final userInput = controllers[field.name]!.text.trim();
+        final correctValue = field.getCorrectValue(currentItem!);
+        
+        print('🔍 Validando ${field.label}:');
+        print('   Usuario: "$userInput"');
+        print('   Correcto: "$correctValue"');
+        
+        bool isCorrect = false;
+        
+        // Detectar si es campo numérico
+        final isNumericField = field.inputType == TextInputType.number || 
+            field.inputType.toString().contains('number');
+        
+        if (isNumericField) {
+          final userNum = double.tryParse(userInput);
+          final correctNum = double.tryParse(correctValue);
+          
+          if (userNum != null && correctNum != null) {
+            isCorrect = (userNum - correctNum).abs() < 0.01;
+            print('   Numérico: $userNum vs $correctNum = $isCorrect');
+          }
+        } else {
+          isCorrect = userInput.toLowerCase() == correctValue.toLowerCase();
+          print('   Texto: $isCorrect');
+        }
+        
+        if (!isCorrect) {
           allCorrect = false;
+          incorrectField = field.label;
+          print('   ❌ Incorrecto');
           break;
+        } else {
+          print('   ✅ Correcto');
         }
       }
 
       if (allCorrect) {
         _showSuccessMessage();
         Future.delayed(Duration(milliseconds: 500), () {
-          _loadItemByIndex(_currentItemIndex + 1);
+          loadItemByIndex(_currentItemIndex + 1);
         });
       } else {
         _showErrorMessage();
       }
     }
+  }
+
+  List<GameField> getFieldsToDisplay() {
+    return widget.getFields();
   }
 
   void _showSuccessMessage() {
@@ -190,7 +217,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
           children: [
             Icon(Icons.check_circle, color: Colors.white),
             SizedBox(width: 8),
-            Text('Correct! ${_currentItem?.name}', softWrap: true),
+            Text('Correct! ${currentItem?.name}', softWrap: true),
           ],
         ),
         backgroundColor: Colors.green,
@@ -248,7 +275,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              _loadItemByIndex(0);
+              loadItemByIndex(0);
             },
             child: Text('Restart'),
           ),
@@ -344,7 +371,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
             filled: true,
             fillColor: Colors.black,
           ),
-          controller: _controllers[field.name],
+          controller: controllers[field.name],
         ),
       ],
     );
@@ -352,7 +379,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
 
   @override
   Widget build(BuildContext context) {
-    String imgUrl = _currentItem?.getImageUrl(ItemService.version) ?? '';
+    String imgUrl = currentItem?.getImageUrl(ItemService.version) ?? '';
     
     return Scaffold(
       appBar: AppBar(
@@ -428,7 +455,6 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
                     key: _formKey,
                     child: ListView(
                       children: [
-                        // Imagen del item
                         Container(
                           padding: EdgeInsets.fromLTRB(0, 20, 0, 4),
                           margin: EdgeInsets.fromLTRB(115, 0, 115, 0),
@@ -451,7 +477,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
                               ),
                               SizedBox(height: 5),
                               Text(
-                                "Id: ${_currentItem?.id ?? '...'}",
+                                "Id: ${currentItem?.id ?? '...'}",
                                 style: GoogleFonts.balthazar(
                                   letterSpacing: 2.0,
                                   fontSize: 30,
@@ -468,8 +494,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
                           color: _isLoadingColor ? _darkMutedColor : _darkVibrantColor,
                           margin: EdgeInsets.all(20),
                         ),
-                        // Campos del formulario dinámicos
-                        ...widget.getFields().map((field) {
+                        ...getFieldsToDisplay().map((field) {
                           return Padding(
                             padding: const EdgeInsets.all(7.0),
                             child: _createTextFormField(field),
