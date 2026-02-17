@@ -8,7 +8,8 @@ class SplashScreen extends StatefulWidget {
   SplashScreenState createState() => SplashScreenState();
 }
 
-class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderStateMixin {
+class SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -30,11 +31,11 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
     );
 
     _animation = Tween<double>(begin: 0, end: 2).animate(_controller)
-    ..addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        _controller.reverse();
-      }
-    });
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          _controller.reverse();
+        }
+      });
 
     _controller.forward();
   }
@@ -56,8 +57,8 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
             image: DecorationImage(
               image: AssetImage("assets/images/SplashBackground.jpg"),
               fit: BoxFit.cover,
-              ),
-          ), 
+            ),
+          ),
           child: Center(
             child: SingleChildScrollView(
               child: Column(
@@ -72,10 +73,11 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
                           fontSize: 50,
                           fontWeight: FontWeight.bold,
                           foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 6
-                          ..color = Colors.cyan,
-                        ), textAlign: TextAlign.center,
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 6
+                            ..color = Colors.cyan,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                       // Solid text as fill.
                       Text(
@@ -83,12 +85,17 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
                         style: TextStyle(
                           fontSize: 50,
                           color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ), textAlign: TextAlign.center,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
-                  Image.asset('assets/images/ItemSquareWorld_Atlas.png', width: 250, height: 250,),
+                  Image.asset(
+                    'assets/images/ItemSquareWorld_Atlas.png',
+                    width: 250,
+                    height: 250,
+                  ),
                   Stack(
                     children: <Widget>[
                       // Stroked text as border.
@@ -98,10 +105,11 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
                           fontSize: 50,
                           fontWeight: FontWeight.bold,
                           foreground: Paint()
-                          ..style = PaintingStyle.stroke
-                          ..strokeWidth = 6
-                          ..color = Colors.cyan,
-                        ), textAlign: TextAlign.center,
+                            ..style = PaintingStyle.stroke
+                            ..strokeWidth = 6
+                            ..color = Colors.cyan,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                       // Solid text as fill.
                       Text(
@@ -109,17 +117,18 @@ class SplashScreenState extends State<SplashScreen>  with SingleTickerProviderSt
                         style: TextStyle(
                           fontSize: 50,
                           color: Colors.black,
-                          fontWeight: FontWeight.bold
-                        ), textAlign: TextAlign.center,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
                 ],
-              )
-            )
-          )
+              ),
+            ),
+          ),
         ),
-      )
+      ),
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'lol_base.dart';
+import '../screens.dart';
 
 class EasyLol extends StatelessWidget {
   const EasyLol({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return EasyModeScreen();
@@ -27,6 +27,7 @@ class EasyModeScreen extends BaseGameScreen {
         label: 'Name',
         inputType: TextInputType.name,
         getCorrectValue: (item) => item.name,
+        showHint: false,
       ),
     ];
   }

@@ -15,12 +15,8 @@ class Themes extends StatelessWidget {
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Color.fromARGB(255, 0, 0, 0)),
       ),
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.black,
-      ),
-      listTileTheme: const ListTileThemeData(
-        textColor: Colors.white,
-      ),
+      drawerTheme: const DrawerThemeData(backgroundColor: Colors.black),
+      listTileTheme: const ListTileThemeData(textColor: Colors.white),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color.fromARGB(255, 53, 53, 53),
@@ -29,16 +25,15 @@ class Themes extends StatelessWidget {
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.cyanAccent,
-        ),
+        style: TextButton.styleFrom(foregroundColor: Colors.cyanAccent),
       ),
-      iconTheme: const IconThemeData(
-        color: Color.fromARGB(255, 0, 255, 242),
-      ),
+      iconTheme: const IconThemeData(color: Color.fromARGB(255, 0, 255, 242)),
       textTheme: const TextTheme(
         titleLarge: TextStyle(
-          fontSize: 24, fontWeight: FontWeight.bold, color: Colors.cyan),
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.cyan,
+        ),
         bodyMedium: TextStyle(fontSize: 18, color: Colors.cyanAccent),
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -46,24 +41,22 @@ class Themes extends StatelessWidget {
         foregroundColor: Colors.cyan,
       ),
       inputDecorationTheme: const InputDecorationTheme(
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-          ),
+        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.cyan),
         ),
-        labelStyle: TextStyle(
-          color: Colors.grey,
-        ),
-        iconColor: Colors.cyan
+        labelStyle: TextStyle(color: Colors.grey),
+        iconColor: Colors.cyan,
       ),
       switchTheme: SwitchThemeData(
         thumbColor: const WidgetStatePropertyAll<Color>(Colors.cyan),
-        trackColor: WidgetStateProperty<Color?>.fromMap(<WidgetStatesConstraint, Color>{WidgetState.selected: Colors.black},)
-      )
+        trackColor: WidgetStateProperty<Color?>.fromMap(
+          <WidgetStatesConstraint, Color>{WidgetState.selected: Colors.black},
+        ),
+      ),
     );
   }
 
@@ -77,12 +70,8 @@ class Themes extends StatelessWidget {
         foregroundColor: Colors.black,
         iconTheme: IconThemeData(color: Colors.white),
       ),
-      drawerTheme: const DrawerThemeData(
-        backgroundColor: Colors.black,
-      ),
-      listTileTheme: const ListTileThemeData(
-        textColor: Colors.white,
-      ),
+      drawerTheme: const DrawerThemeData(backgroundColor: Colors.black),
+      listTileTheme: const ListTileThemeData(textColor: Colors.white),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color.fromARGB(255, 53, 53, 53),
@@ -91,16 +80,15 @@ class Themes extends StatelessWidget {
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          foregroundColor: Colors.cyanAccent,
-        ),
+        style: TextButton.styleFrom(foregroundColor: Colors.cyanAccent),
       ),
-      iconTheme: const IconThemeData(
-        color: Color.fromARGB(255, 0, 255, 242),
-      ),
+      iconTheme: const IconThemeData(color: Color.fromARGB(255, 0, 255, 242)),
       textTheme: const TextTheme(
         titleLarge: TextStyle(
-          fontSize: 24, fontWeight: FontWeight.bold, color: Colors.cyan),
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.cyan,
+        ),
         bodyMedium: TextStyle(fontSize: 18, color: Colors.cyanAccent),
       ),
       floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -108,27 +96,25 @@ class Themes extends StatelessWidget {
         foregroundColor: Colors.cyan,
       ),
       inputDecorationTheme: const InputDecorationTheme(
-        border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-          ),
+        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.white),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Colors.cyan),
         ),
-        labelStyle: TextStyle(
-          color: Colors.grey,
-        ),
-        iconColor: Colors.cyan
+        labelStyle: TextStyle(color: Colors.grey),
+        iconColor: Colors.cyan,
       ),
       switchTheme: SwitchThemeData(
         thumbColor: const WidgetStatePropertyAll<Color>(Colors.cyan),
-        trackColor: WidgetStateProperty<Color?>.fromMap(<WidgetStatesConstraint, Color>{WidgetState.selected: Colors.black},)
-      )
+        trackColor: WidgetStateProperty<Color?>.fromMap(
+          <WidgetStatesConstraint, Color>{WidgetState.selected: Colors.black},
+        ),
+      ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     throw UnimplementedError();

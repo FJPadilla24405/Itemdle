@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'side_drawer.dart';
+import 'screens.dart';
 import '../themes/themes.dart';
 
 class HomeApp extends StatefulWidget {
@@ -23,22 +23,35 @@ class AppState extends State<HomeApp> {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Itemdle",
+          title: Text(
+            "Itemdle",
             style: GoogleFonts.kenia(
               letterSpacing: 8.0,
               fontSize: 50,
-              fontWeight: FontWeight.bold
-            ), textAlign: TextAlign.center,
+              fontWeight: FontWeight.bold,
+            ),
+            textAlign: TextAlign.center,
           ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.account_circle),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => UserProfileScreen()),
+                );
+              },
+            ),
+          ],
         ),
         drawer: const SideDrawer(),
         body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/HomeBackground.jpg"),
-                fit: BoxFit.cover,
-              ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/HomeBackground.jpg"),
+              fit: BoxFit.cover,
             ),
+          ),
           child: Center(
             child: SingleChildScrollView(
               child: Column(
@@ -54,16 +67,16 @@ class AppState extends State<HomeApp> {
                       color: Color.fromRGBO(0, 0, 0, 0.5),
                       border: Border.all(
                         width: 10,
-                        color: Color.fromRGBO(255, 255, 255, 0.15)
-                      ), borderRadius: BorderRadius.circular(50),
+                        color: Color.fromRGBO(255, 255, 255, 0.15),
+                      ),
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    child: 
-                      Text("Welcome to Itemdle! A game to test your knowledge on various items from videogames. So far the only option available for videogames is League Of Legends.",
-                        style: GoogleFonts.balthazar(
-                          fontSize: 19,
-                        ), softWrap: true,
-                        textAlign: TextAlign.center,
-                      )
+                    child: Text(
+                      "Welcome to Itemdle! A game to test your knowledge on various items from videogames. So far the only option available for videogames is League Of Legends.",
+                      style: GoogleFonts.balthazar(fontSize: 19),
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   Container(
                     width: screenWidth * 0.9,
@@ -74,16 +87,17 @@ class AppState extends State<HomeApp> {
                       color: Color.fromRGBO(0, 0, 0, 0.5),
                       border: Border.all(
                         width: 10,
-                        color: Color.fromRGBO(255, 255, 255, 0.15)
-                      ), borderRadius: BorderRadius.circular(50),
+                        color: Color.fromRGBO(255, 255, 255, 0.15),
+                      ),
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    child: 
-                      Text("The goal is to accurately guess the details from every item based on their icon. Each videogame category will have up to three difficulties, from easy to hard. The harder the difficulty is the more fields you'll have to fill out.",
-                        style: GoogleFonts.balthazar(
-                        fontSize: 19,
-                        ), softWrap: true,
-                        textAlign: TextAlign.center,)
+                    child: Text(
+                      "The goal is to accurately guess the details from every item based on their icon. Each videogame category will have up to three difficulties, from easy to hard. The harder the difficulty is the more fields you'll have to fill out.",
+                      style: GoogleFonts.balthazar(fontSize: 19),
+                      softWrap: true,
+                      textAlign: TextAlign.center,
                     ),
+                  ),
                   Container(
                     width: screenWidth * 0.9,
                     height: screenHeight * 0.5,
@@ -93,22 +107,23 @@ class AppState extends State<HomeApp> {
                       color: Color.fromRGBO(0, 0, 0, 0.5),
                       border: Border.all(
                         width: 10,
-                        color: Color.fromRGBO(255, 255, 255, 0.15)
-                      ), borderRadius: BorderRadius.circular(50),
+                        color: Color.fromRGBO(255, 255, 255, 0.15),
+                      ),
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    child: 
-                      Text("Start by pressing the three lines icon on the top left and choosing the videogame category. Have fun!",
-                        style: GoogleFonts.balthazar(
-                          fontSize: 19,
-                        ), softWrap: true,
-                      textAlign: TextAlign.center,)
+                    child: Text(
+                      "Start by pressing the three lines icon on the top left and choosing the videogame category. Have fun!",
+                      style: GoogleFonts.balthazar(fontSize: 19),
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                ]
-              )
+                ],
+              ),
             ),
-          )
-        )
-      )
+          ),
+        ),
+      ),
     );
   }
 }

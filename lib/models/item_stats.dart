@@ -46,10 +46,10 @@ class ItemStats {
     );
   }
 
-  // Método para obtener solo las stats que no son 0 (útil para mostrar)
+  // Método para obtener solo las stats que no son 0
   Map<String, double> getNonZeroStats() {
     Map<String, double> nonZero = {};
-    
+
     if (health != 0) nonZero['HP'] = health;
     if (mana != 0) nonZero['Mana'] = mana;
     if (healthRegen != 0) nonZero['HP Regen'] = healthRegen;
@@ -62,10 +62,10 @@ class ItemStats {
     if (critChance != 0) nonZero['Critical Strike Chance (%)'] = critChance * 100;
     if (magicResistance != 0) nonZero['Magic Resistance'] = magicResistance;
     if (lifeSteal != 0) nonZero['Life Steal (%)'] = lifeSteal * 100;
-    
+
     return nonZero;
   }
-  
+
   // Verificar si tiene alguna stat
   bool hasAnyStats() {
     return getNonZeroStats().isNotEmpty;

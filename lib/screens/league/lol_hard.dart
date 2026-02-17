@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../models/item_model.dart';
-import 'lol_base.dart';
+import '../screens.dart';
 
 class HardLol extends StatelessWidget {
   const HardLol({super.key});
-  
   @override
-  Widget build(BuildContext context) {
-    return HardModeScreen();
-  }
+  Widget build(BuildContext context) => HardModeScreen();
 }
 
 class HardModeScreen extends BaseGameScreen {
@@ -21,124 +17,109 @@ class HardModeScreen extends BaseGameScreen {
   String getTitle() => 'Hard Mode';
 
   @override
-  List<GameField> getFields() {
-    return [
-      GameField(
-        name: 'name',
-        label: 'Name',
-        inputType: TextInputType.name,
-        getCorrectValue: (item) => item.name,
-      ),
-    ];
-  }
-  
+  List<GameField> getFields() => [
+    GameField(
+      name: 'name',
+      label: 'Name',
+      inputType: TextInputType.name,
+      getCorrectValue: (item) => item.name,
+      showHint: false,
+    ),
+  ];
+
   @override
   State<HardModeScreen> createState() => _HardModeScreenState();
 }
 
 class _HardModeScreenState extends BaseGameState<HardModeScreen> {
-  // Lista dinámica de campos que cambia según el item
   List<GameField> _dynamicFields = [];
-  
-  // Guardar el snapshot de stats del item actual para validación
+
+  // Snapshot de stats del item actual - clave para validación correcta
   Map<String, double> _currentItemStats = {};
-  
-  @override
-  void initState() {
-    super.initState();
-  }
-  
+
   @override
   Future<void> loadItemByIndex(int index) async {
+    // Primero limpiar campos dinámicos anteriores de forma segura
+    _clearDynamicControllers();
+
+    // Llamar al padre para cargar el item y actualizar currentItem
     await super.loadItemByIndex(index);
-    
-    // Después de cargar el item, actualizar los campos dinámicos
+
+    // Después de que el padre cargó el item, generar nuevos campos
     if (currentItem != null) {
-      _updateDynamicFields();
+      _buildDynamicFields();
     }
   }
-  
-  void _updateDynamicFields() {
-    // Obtener stats no cero del item actual
-    _currentItemStats = currentItem!.stats.getNonZeroStats();
-    
-    print('🔍 Item: ${currentItem!.name}');
-    print('🔍 Stats encontradas: $_currentItemStats');
-    
-    setState(() {
-      _dynamicFields = _generateStatsFields();
-      
-      // Limpiar controladores viejos que ya no se necesitan
-      controllers.keys.toList().forEach((key) {
-        if (!_dynamicFields.any((field) => field.name == key) && key != 'name') {
-          controllers[key]?.dispose();
-          controllers.remove(key);
-        }
-      });
-      
-      // Crear nuevos controladores para los nuevos campos
-      for (var field in _dynamicFields) {
-        if (!controllers.containsKey(field.name)) {
-          controllers[field.name] = TextEditingController();
-        }
-      }
-    });
+
+  void _clearDynamicControllers() {
+    // Solo eliminar los controladores que NO son 'name'
+    // No hacemos dispose aquí porque dispose() del padre los maneja todos
+    controllers.keys
+        .where((k) => k != 'name')
+        .toList()
+        .forEach((k) => controllers.remove(k));
   }
-  
-  List<GameField> _generateStatsFields() {
-    List<GameField> fields = [
-      // Nombre siempre está primero
+
+  void _buildDynamicFields() {
+    _currentItemStats = currentItem!.stats.getNonZeroStats();
+
+    final newFields = <GameField>[
       GameField(
         name: 'name',
         label: 'Name',
         inputType: TextInputType.name,
         getCorrectValue: (item) => item.name,
+        showHint: false,
       ),
       GameField(
         name: 'total_gold',
         label: 'Total Gold',
         inputType: TextInputType.number,
         getCorrectValue: (item) => item.gold.total.toString(),
+        showHint: true,
       ),
       GameField(
         name: 'tier',
         label: 'Tier',
         inputType: TextInputType.text,
         getCorrectValue: (item) => item.depth.toString(),
+        showHint: false,
       ),
     ];
-    
-    // Crear un campo por cada stat
+
     _currentItemStats.forEach((statName, statValue) {
-      final fieldName = statName.toLowerCase().replaceAll(' ', '_');
-      
-      fields.add(
+      final key = 'stat_${statName.toLowerCase().replaceAll(' ', '_')}';
+
+      // Crear el controlador solo si no existe ya
+      if (!controllers.containsKey(key)) {
+        controllers[key] = TextEditingController();
+      }
+
+      newFields.add(
         GameField(
-          name: fieldName,
+          name: key,
           label: statName,
-          inputType: TextInputType.numberWithOptions(decimal: true, signed: true),
-          getCorrectValue: (item) {
-            // Usar el valor guardado del snapshot
-            final value = _currentItemStats[statName];
-            if (value == null) return '0';
-            
-            // Si es entero, mostrar sin decimales
-            if (value == value.toDouble()) {
-              return value.toDouble().toString();
-            }
-            return value.toString();
+          inputType: TextInputType.numberWithOptions(
+            decimal: true,
+            signed: true,
+          ),
+          showHint: true,
+          getCorrectValue: (_) {
+            // Usar el snapshot guardado, no recalcular
+            final v = _currentItemStats[statName];
+            if (v == null) return '0';
+            return v == v.toInt() ? v.toInt().toString() : v.toString();
           },
         ),
       );
-      
-      print('📝 Campo creado: $statName = $statValue');
     });
-    
-    return fields;
+
+    setState(() {
+      _dynamicFields = newFields;
+    });
   }
-  
+
   @override
-  List<GameField> getFieldsToDisplay() {
-    return _dynamicFields.isEmpty ? widget.getFields() : _dynamicFields;
-  }
+  List<GameField> getFieldsToDisplay() =>
+      _dynamicFields.isEmpty ? widget.getFields() : _dynamicFields;
 }

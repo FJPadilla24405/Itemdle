@@ -71,7 +71,7 @@ class Item {
     required this.gold,
     required this.tags,
     required this.stats,
-    required this.depth
+    required this.depth,
   });
 
   factory Item.fromJson(String id, Map<String, dynamic> json) {

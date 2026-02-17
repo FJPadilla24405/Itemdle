@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
-import '../side_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class DifMenuLol extends StatelessWidget {
   const DifMenuLol({super.key});
@@ -35,22 +33,33 @@ class DifMenuLol extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 difBtn("EASY", "(Only name)", Colors.green, () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const EasyLol()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const EasyLol(),
+                    ),
+                  );
                 }),
                 SizedBox(height: 50),
                 difBtn("MEDIUM", "(Name, price and tier)", Colors.orange, () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const MediumLol()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const MediumLol(),
+                    ),
+                  );
                 }),
                 SizedBox(height: 50),
-                difBtn("HARD", "(Name, price, tier and exact statistics)", Colors.red, () {
-                  Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const HardLol()));
-                }),
+                difBtn(
+                  "HARD",
+                  "(Name, price, tier and exact statistics)",
+                  Colors.red,
+                  () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const HardLol(),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),
@@ -59,7 +68,12 @@ class DifMenuLol extends StatelessWidget {
     );
   }
 
-  Widget difBtn(String title, String subtitle, Color color, VoidCallback onPressed) {
+  Widget difBtn(
+    String title,
+    String subtitle,
+    Color color,
+    VoidCallback onPressed,
+  ) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
@@ -76,13 +90,17 @@ class DifMenuLol extends StatelessWidget {
               letterSpacing: 5,
               fontSize: 50,
               fontWeight: FontWeight.bold,
-              height: 1
+              height: 1,
             ),
             textAlign: TextAlign.center,
           ),
           Text(
             subtitle,
-            style: GoogleFonts.balthazar(color: Color.fromARGB(175, 0, 0, 0), fontSize: 20, height: 0.75),
+            style: GoogleFonts.balthazar(
+              color: Color.fromARGB(175, 0, 0, 0),
+              fontSize: 20,
+              height: 0.75,
+            ),
             textAlign: TextAlign.center,
           ),
         ],

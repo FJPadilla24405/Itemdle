@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'lol_base.dart';
+import '../screens.dart';
 
 class MediumLol extends StatelessWidget {
   const MediumLol({super.key});
-  
+
   @override
   Widget build(BuildContext context) {
     return MediumModeScreen();
@@ -27,18 +27,21 @@ class MediumModeScreen extends BaseGameScreen {
         label: 'Name',
         inputType: TextInputType.name,
         getCorrectValue: (item) => item.name,
+        showHint: false,
       ),
       GameField(
         name: 'total_gold',
         label: 'Total Gold',
         inputType: TextInputType.number,
         getCorrectValue: (item) => item.gold.total.toString(),
+        showHint: true,
       ),
       GameField(
         name: 'tier',
         label: 'Tier',
         inputType: TextInputType.text,
         getCorrectValue: (item) => item.depth.toString(),
+        showHint: false,
       ),
     ];
   }
