@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../routes/app_routes.dart';
 import '../../services/auth_service.dart';
+import '../screens.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,7 +17,7 @@ class LoginState extends State<LoginScreen> {
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final AuthService _authService = AuthService();
-  
+
   bool _isLoading = false;
   bool _obscurePassword = true;
 
@@ -89,7 +90,7 @@ class LoginState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -119,11 +120,11 @@ class LoginState extends State<LoginScreen> {
                       Image.asset(
                         "assets/images/ItemSquareWorld_Atlas.png",
                         width: 200,
-                      )
+                      ),
                     ],
                   ),
                   SizedBox(height: 20),
-                  
+
                   // Formulario de login
                   Container(
                     width: screenWidth * 0.9,
@@ -162,7 +163,7 @@ class LoginState extends State<LoginScreen> {
                             hintText: "Enter username",
                             hintStyle: GoogleFonts.balthazar(fontSize: 16),
                             filled: true,
-                            fillColor: Colors.white.withValues(alpha:0.1),
+                            fillColor: Colors.white.withValues(alpha: 0.1),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide.none,
@@ -171,7 +172,10 @@ class LoginState extends State<LoginScreen> {
                               horizontal: 20,
                               vertical: 16,
                             ),
-                            prefixIcon: Icon(Icons.person, color: Colors.white70),
+                            prefixIcon: Icon(
+                              Icons.person,
+                              color: Colors.white70,
+                            ),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
@@ -180,9 +184,9 @@ class LoginState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        
+
                         SizedBox(height: 24),
-                        
+
                         // Password field
                         Text(
                           "Password",
@@ -238,9 +242,9 @@ class LoginState extends State<LoginScreen> {
                             return null;
                           },
                         ),
-                        
+
                         SizedBox(height: 30),
-                        
+
                         // Login button
                         SizedBox(
                           width: double.infinity,
@@ -249,7 +253,9 @@ class LoginState extends State<LoginScreen> {
                             onPressed: _isLoading ? null : _handleLogin,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.cyan,
-                              disabledBackgroundColor: Colors.cyan.withOpacity(0.5),
+                              disabledBackgroundColor: Colors.cyan.withOpacity(
+                                0.5,
+                              ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
@@ -275,6 +281,22 @@ class LoginState extends State<LoginScreen> {
                                     softWrap: true,
                                     textAlign: TextAlign.center,
                                   ),
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        TextButton(
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const RegisterScreen(),
+                            ),
+                          ),
+                          child: Text(
+                            "Don't have an account? Register",
+                            style: GoogleFonts.balthazar(
+                              fontSize: 15,
+                              color: Colors.white70,
+                            ),
                           ),
                         ),
                       ],
