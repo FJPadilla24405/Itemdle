@@ -1,5 +1,6 @@
 import 'item_stats.dart';
 
+// Clase con los datos de la imagen de un item
 class ItemImage {
   final String full;
   final String sprite;
@@ -19,6 +20,7 @@ class ItemImage {
     required this.h,
   });
 
+  // Obtenemos los datos
   factory ItemImage.fromJson(Map<String, dynamic> json) {
     return ItemImage(
       full: json['full'] ?? '',
@@ -32,6 +34,7 @@ class ItemImage {
   }
 }
 
+// Clase con los datos de los precios de un item
 class ItemGold {
   final int base;
   final bool purchasable;
@@ -45,6 +48,7 @@ class ItemGold {
     required this.sell,
   });
 
+  // Obtenemos los datos
   factory ItemGold.fromJson(Map<String, dynamic> json) {
     return ItemGold(
       base: json['base'] ?? 0,
@@ -55,6 +59,7 @@ class ItemGold {
   }
 }
 
+// Clase Item
 class Item {
   final String id;
   final String name;
@@ -74,6 +79,7 @@ class Item {
     required this.depth,
   });
 
+  // Obtenemos los datos
   factory Item.fromJson(String id, Map<String, dynamic> json) {
     return Item(
       id: id,
@@ -86,6 +92,7 @@ class Item {
     );
   }
 
+  // Metodo para conseguir la calidad de un item.
   static String getTier(Map<String, dynamic> json) {
     int depth = json['depth'] ?? 0;
     String tier = '';
@@ -101,7 +108,7 @@ class Item {
     return tier;
   }
 
-  // Método helper para obtener la URL completa de la imagen
+  // Método para obtener la URL completa de la imagen
   String getImageUrl(String version) {
     return 'https://ddragon.leagueoflegends.com/cdn/$version/img/item/${image.full}';
   }

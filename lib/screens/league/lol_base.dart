@@ -409,7 +409,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
       ),
     );
   }
-
+  
   void _showErrorDialog(String message) {
     showDialog(
       context: context,
@@ -435,6 +435,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
     );
   }
 
+  // Guarda la puntuacion en la base de datos
   Future<void> _saveScore() async {
     int currentScore = _authService.getScore(widget.getGameMode());
     int newScore = currentScore + 1;
@@ -443,6 +444,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
 
   // ─── WIDGETS ────────────────────────────────────────────
 
+  // Barra de vida
   Widget _buildLivesBar() {
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -457,6 +459,7 @@ abstract class BaseGameState<T extends BaseGameScreen> extends State<T> {
     );
   }
 
+  // Devuelve una column con los labels y textformfields de cada campo
   Widget _createTextFormField(GameField field) {
     return Column(
       children: [

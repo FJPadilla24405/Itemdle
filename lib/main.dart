@@ -9,6 +9,7 @@ void main() async {
   runApp(const MyApp());
 }
 
+// Clase principal con las rutas al splash y home
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

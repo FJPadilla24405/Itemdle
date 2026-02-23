@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 
+// Temas para la aplicación
 class Themes extends StatelessWidget {
   const Themes({super.key});
 
+  // Tema por defecto
   ThemeData Default() {
     return ThemeData(
       brightness: Brightness.dark,
@@ -60,6 +62,7 @@ class Themes extends StatelessWidget {
     );
   }
 
+  // Tema para las pantallas de juego
   ThemeData Game() {
     return ThemeData(
       brightness: Brightness.dark,

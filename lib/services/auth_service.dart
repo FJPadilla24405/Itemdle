@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import '../utils/global_user.dart';
 
+// Clase encargada de confirmar si el usuario existe en la base de datos y sacar sus datos
 class AuthService {
   final DatabaseReference _database = FirebaseDatabase.instance.ref();
   final GlobalUser _globalUser = GlobalUser();
@@ -71,7 +72,6 @@ class AuthService {
       // Usuario no encontrado
       return {'success': false, 'message': 'Username not found'};
     } catch (e) {
-      print('Login error details: $e');
       return {'success': false, 'message': 'Error: $e'};
     }
   }
@@ -116,7 +116,6 @@ class AuthService {
 
       return true;
     } catch (e) {
-      print('Error updating score: $e');
       return false;
     }
   }

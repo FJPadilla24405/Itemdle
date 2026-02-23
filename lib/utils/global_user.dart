@@ -1,5 +1,3 @@
-// utils/global_user.dart
-
 class GlobalUser {
   static final GlobalUser _instance = GlobalUser._internal();
 

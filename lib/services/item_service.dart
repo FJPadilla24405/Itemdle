@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/item_model.dart';
 
+// Clase encargada de obtener los objetos de la api
 class ItemService {
   // Versión del parche (puedes actualizarla según necesites)
   static const String version = '12.6.1';

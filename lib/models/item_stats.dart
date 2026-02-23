@@ -1,5 +1,4 @@
-// models/item_stats.dart
-
+// Clase con las estadisticas de un item
 class ItemStats {
   final double health;
   final double mana;
@@ -29,6 +28,7 @@ class ItemStats {
     this.lifeSteal = 0,
   });
 
+  // Conseguimos los valores
   factory ItemStats.fromJson(Map<String, dynamic> json) {
     return ItemStats(
       health: (json['FlatHPPoolMod'] ?? 0).toDouble(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
 
+// Pantalla de juego del modo facil
 class EasyLol extends StatelessWidget {
   const EasyLol({super.key});
 
@@ -37,5 +38,5 @@ class EasyModeScreen extends BaseGameScreen {
 }
 
 class _EasyModeScreenState extends BaseGameState<EasyModeScreen> {
-  // No necesitas agregar nada aquí, toda la lógica está en BaseGameState
+
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../screens.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Pantalla de eleccion de dificultad
 class DifMenuLol extends StatelessWidget {
   const DifMenuLol({super.key});
 
@@ -68,6 +69,7 @@ class DifMenuLol extends StatelessWidget {
     );
   }
 
+  // Devuelve un boton personalizado para cada dificultad
   Widget difBtn(
     String title,
     String subtitle,

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'screens.dart';
 
+// Drawer de la aplicacion
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
 

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../routes/app_routes.dart';
 
+// Pantalla de inicio
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -17,6 +18,7 @@ class SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
+    // Pasa a la pantalla de login despues del tiempo especificado
     Future.delayed(const Duration(seconds: 10), () {
       // Verificar si el widget sigue montado antes de navegar
       // Para navegar, el widget debe de seguir en el árbol
@@ -25,11 +27,13 @@ class SplashScreenState extends State<SplashScreen>
       }
     });
 
+    // Controlador de la animacion
     _controller = AnimationController(
       duration: const Duration(seconds: 5),
       vsync: this,
     );
 
+    // Animacion de fade in y fade out
     _animation = Tween<double>(begin: 0, end: 2).animate(_controller)
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {

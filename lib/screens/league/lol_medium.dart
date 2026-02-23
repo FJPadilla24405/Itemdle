@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
 
+// Pantalla de juego de dificultad media
 class MediumLol extends StatelessWidget {
   const MediumLol({super.key});
 
@@ -51,5 +52,5 @@ class MediumModeScreen extends BaseGameScreen {
 }
 
 class _MediumModeScreenState extends BaseGameState<MediumModeScreen> {
-  // Toda la lógica heredada de BaseGameState
+
 }

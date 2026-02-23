@@ -5,6 +5,7 @@ import '../../routes/app_routes.dart';
 import '../../services/auth_service.dart';
 import '../screens.dart';
 
+// Pantalla de login del usuario (usuario usuario)
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -28,6 +29,7 @@ class LoginState extends State<LoginScreen> {
     super.dispose();
   }
 
+  // Metodo encargado de verificar el usuario
   Future<void> _handleLogin() async {
     if (_formKey.currentState!.validate()) {
       setState(() {
@@ -211,7 +213,7 @@ class LoginState extends State<LoginScreen> {
                             hintText: "Enter password",
                             hintStyle: GoogleFonts.balthazar(fontSize: 16),
                             filled: true,
-                            fillColor: Colors.white.withOpacity(0.1),
+                            fillColor: Colors.white.withValues(alpha: 0.1),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15),
                               borderSide: BorderSide.none,
@@ -253,8 +255,8 @@ class LoginState extends State<LoginScreen> {
                             onPressed: _isLoading ? null : _handleLogin,
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.cyan,
-                              disabledBackgroundColor: Colors.cyan.withOpacity(
-                                0.5,
+                              disabledBackgroundColor: Colors.cyan.withValues(
+                                alpha: 0.5,
                               ),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),

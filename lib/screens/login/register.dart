@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_database/firebase_database.dart';
 
+// Pantalla de registro de usuario
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
@@ -28,6 +29,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     super.dispose();
   }
 
+  // Metodo que se encarga de validar que puede crearse ese usuario
   Future<void> _handleRegister() async {
     if (!_formKey.currentState!.validate()) return;
 
@@ -93,6 +95,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
   }
 
+  // Metodo que muestra un snackbar si hay un error
   void _showError(String message) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Row(children: [
@@ -265,6 +268,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
+  // Devuelve el label con el texto que se introduzca
   Widget _buildLabel(String text) {
     return Align(
       alignment: Alignment.centerLeft,
@@ -276,6 +280,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
+  // Encargado de construir el textformfield para cada campo
   Widget _buildField({
     required TextEditingController controller,
     required String hint,

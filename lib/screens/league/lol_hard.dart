@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens.dart';
 
+// Pantalla de juego de dificultad alta
 class HardLol extends StatelessWidget {
   const HardLol({super.key});
   @override

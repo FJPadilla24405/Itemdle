@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../services/local_storage_service.dart';
 import '../utils/global_user.dart';
 
+// Pantalla con las puntuaciones del jugador y su información
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key});
 
@@ -120,6 +121,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     );
   }
 
+  // Construye un contenedor con las puntuaciones dependiendo del modo
   Widget _buildModeCard(String title, Map<String, int> stats, Color color) {
     final wins = stats['wins'] ?? 0;
     final attempts = stats['attempts'] ?? 0;
@@ -183,6 +185,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
     );
   }
 
+  // Devuelve un column con un icono distinto para cada puntuacion
   Widget _buildStatItem(
     IconData icon,
     String value,

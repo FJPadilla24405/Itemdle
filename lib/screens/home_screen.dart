@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'screens.dart';
 import '../themes/themes.dart';
 
+// Pantalla principal de la aplicación
 class HomeApp extends StatefulWidget {
   const HomeApp({super.key});
 
